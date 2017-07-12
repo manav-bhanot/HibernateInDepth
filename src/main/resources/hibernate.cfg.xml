@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- Specifiying database login credentials -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/library</property>
+		<property name="hibernate.connection.username">mbhanot</property>
+		<property name="hibernate.connection.password">csulb</property>
+		
+		<!-- Authorizing hibernate to create table in the database -->
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">false</property>
+
+		<!-- Mapping the entity classes with the database -->
+		<mapping class="edu.csulb.library.entity.Book" />
+	</session-factory>
+</hibernate-configuration>
